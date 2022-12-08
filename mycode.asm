@@ -31,6 +31,7 @@ input_again db 10,13, 'Please Press one of the above given keys$'
 wrong_input db 10,13, 'Wrong Input$'
 exit_program db 10,13,'Press 4 to exit$'
 amount_print db 10,13,'Press 3 to show amount earned today$'
+ msg2 db 10,13,10,13, 'What Do You Want To Buy$'
    
    
 .code 
@@ -209,3 +210,5 @@ mov ah,9
       medicines_stats: 
       show_amount:
       exit: 
+
+end main
