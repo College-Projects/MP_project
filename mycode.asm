@@ -12,6 +12,7 @@ banner5 db  '|  |  |  |  |  _  |    \|   |   |  _  |$'
 banner6 db  '|  |  |  |  |  |  |  .  \   |   |  |  |$'
 banner7 db  '|__|  |__|__|__|__|__|\_|___|___|__|__|$'
 
+
 opt1 db 10,13, '1. Panadol - 20b$'
 opt2 db 10,13, '2. Paracetamol - 30b$'
 opt3 db 10,13, '3. Cleritek - 20b$'
@@ -112,7 +113,6 @@ mov ah,9
     mov ah,9
     int 21h    
     jmp start 
-      
       
       medicines_stats: 
       show_amount:
