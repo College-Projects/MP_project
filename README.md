@@ -23,6 +23,7 @@ The project's description:
 Microsoft Teams Meetings:
 
 1/12/2022 --> Choosing the project's idea
+
 8/12/2022 --> Working on the design and the interface of the program
 
 ******************************************************************************************************************************************************************
