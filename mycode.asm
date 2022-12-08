@@ -12,7 +12,11 @@ banner5 db  '|  |  |  |  |  _  |    \|   |   |  _  |$'
 banner6 db  '|  |  |  |  |  |  |  .  \   |   |  |  |$'
 banner7 db  '|__|  |__|__|__|__|__|\_|___|___|__|__|$'
 
-
+nlineCurV       db 13, 10, "$"   
+welcome db 10,13,10,13, 'WELCOME TO MEDICAL STORE$'
+msg1 db 10,13,10,13, 'Choose a Option$'
+msg_medicines db 10,13, 'Press 1 to buy medicines$'
+medicines_sold db 10,13, 'Press 2 to see medicines statistics$'
 opt1 db 10,13, '1. Panadol - 20b$'
 opt2 db 10,13, '2. Paracetamol - 30b$'
 opt3 db 10,13, '3. Cleritek - 20b$'
@@ -25,6 +29,8 @@ opt9 db 10,13, '9. Pfizer Vaccine - 20b$'
 newLine db 10,13, '$'
 input_again db 10,13, 'Please Press one of the above given keys$'
 wrong_input db 10,13, 'Wrong Input$'
+exit_program db 10,13,'Press 4 to exit$'
+amount_print db 10,13,'Press 3 to show amount earned today$'
    
    
 .code 
@@ -112,7 +118,39 @@ mov ah,9
     mov dx,offset input_again
     mov ah,9
     int 21h    
-    jmp start 
+    jmp start
+    
+    
+    menu proc
+        mov dx,offset welcome
+        mov ah,9
+        int 21h
+        
+        mov dx,offset msg1
+        mov ah,9
+        int 21h
+        
+        mov dx,offset msg_medicines
+        mov ah,9
+        int 21h
+        
+        mov dx,offset medicines_sold
+        mov ah,9
+        int 21h
+        
+        mov dx,offset amount_print
+        mov ah,9
+        int 21h
+        
+        mov dx,offset exit_program
+        mov ah,9
+        int 21h                   
+        
+             
+        ret
+          
+    menu endp
+      
       
       medicines_stats: 
       show_amount:
