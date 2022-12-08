@@ -25,3 +25,59 @@ opt9 db 10,13, '9. Pfizer Vaccine - 20b$'
    
    
 .code 
+main proc
+     mov ax,@data
+     mov ds,ax   
+       
+
+     start:
+     lea dx, banner1
+mov ah,9
+    int 21h
+lea dx, nlineCurV
+    mov ah,9
+    int 21h
+
+lea dx, banner2
+mov ah,9
+    int 21h
+lea dx, nlineCurV
+mov ah,9
+    int 21h
+
+lea dx, banner3
+mov ah,9
+    int 21h
+lea dx, nlineCurV
+mov ah,9
+    int 21h
+
+lea dx, banner4
+mov ah,9
+    int 21h
+lea dx, nlineCurV
+mov ah,9
+    int 21h
+
+lea dx, banner5
+mov ah,9
+    int 21h
+lea dx, nlineCurV
+mov ah,9
+    int 21h
+
+lea dx, banner6
+mov ah,9
+    int 21h
+lea dx, nlineCurV
+mov ah,9
+    int 21h
+
+lea dx, banner7
+mov ah,9
+    int 21h
+lea dx, nlineCurV
+mov ah,9
+    int 21h
+lea dx, nlineCurV
+mov ah,9
