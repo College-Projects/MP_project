@@ -113,6 +113,7 @@ mov ah,9
     int 21h    
     jmp start 
       
+      
       medicines_stats: 
       show_amount:
       exit: 
