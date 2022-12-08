@@ -21,7 +21,9 @@ opt6 db 10,13, '6. Surbex Z - 80b$'
 opt7 db 10,13, '7. Arinac - 40b$'
 opt8 db 10,13, '8. Sinopharm Vaccine - 10b$'
 opt9 db 10,13, '9. Pfizer Vaccine - 20b$'
-
+newLine db 10,13, '$'
+input_again db 10,13, 'Please Press one of the above given keys$'
+wrong_input db 10,13, 'Wrong Input$'
    
    
 .code 
@@ -81,3 +83,36 @@ mov ah,9
     int 21h
 lea dx, nlineCurV
 mov ah,9
+   int 21h
+    mov dx,offset newLine
+    mov ah,9
+    int 21h
+    call menu
+
+    mov dx,offset newLine
+    mov ah,9
+    int 21h    
+    
+    mov ah,1
+    int 21h
+    
+    cmp al,'1'
+    je menu2  
+    cmp al,'2'
+    je medicines_stats
+    cmp al,'3'
+    je show_amount
+    cmp al,'4'
+    je exit
+    
+    mov dx,offset wrong_input
+    mov ah,9
+    int 21h
+    mov dx,offset input_again
+    mov ah,9
+    int 21h    
+    jmp start 
+      
+      medicines_stats: 
+      show_amount:
+      exit: 
