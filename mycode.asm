@@ -150,7 +150,61 @@ mov ah,9
         ret
           
     menu endp
-      
+     menu2 proc  
+        
+        mov dx,offset msg2
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt1
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt2
+        mov ah,9
+        int 21h
+            
+        mov dx,offset opt3
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt4
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt5
+        mov ah,9
+        int 21h
+            
+        mov dx,offset opt6
+        mov ah,9         
+        int 21h
+        
+        mov dx,offset opt7
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt8
+        mov ah,9
+        int 21h
+            
+        mov dx,offset opt9
+        mov ah,9
+        int 21h
+        
+        mov dx,offset newLine
+        mov ah,9
+        int 21h    
+        
+        mov ah,1
+        int 21h
+        
+        
+        
+        ret
+            
+            
+    menu2 endp  
       
       medicines_stats: 
       show_amount:
