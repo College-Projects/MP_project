@@ -38,63 +38,64 @@ amount_print db 10,13,'Press 3 to show amount earned today$'
 main proc
      mov ax,@data
      mov ds,ax   
-       
-
-     start:
+;DISPLAY THE LOGO
      lea dx, banner1
 mov ah,9
     int 21h
-lea dx, nlineCurV
+lea dx, newLine
     mov ah,9
     int 21h
 
 lea dx, banner2
 mov ah,9
     int 21h
-lea dx, nlineCurV
+lea dx, newLine
 mov ah,9
     int 21h
 
 lea dx, banner3
 mov ah,9
     int 21h
-lea dx, nlineCurV
+lea dx, newLine
 mov ah,9
     int 21h
 
 lea dx, banner4
 mov ah,9
     int 21h
-lea dx, nlineCurV
+lea dx, newLine
 mov ah,9
     int 21h
 
 lea dx, banner5
 mov ah,9
     int 21h
-lea dx, nlineCurV
+lea dx, newLine
 mov ah,9
     int 21h
 
 lea dx, banner6
 mov ah,9
     int 21h
-lea dx, nlineCurV
+lea dx, newLine
 mov ah,9
     int 21h
 
 lea dx, banner7
 mov ah,9
     int 21h
-lea dx, nlineCurV
+lea dx, newLine
 mov ah,9
     int 21h
-lea dx, nlineCurV
+lea dx, newLine
 mov ah,9
    int 21h
     mov dx,offset newLine
     mov ah,9
     int 21h
+           
+
+     start:
     call menu
 
     mov dx,offset newLine
