@@ -29,9 +29,13 @@ opt9 db 10,13, '9. Pfizer Vaccine - 20b$'
 newLine db 10,13, '$'
 msg_panadol db 10,13, 'How many panadols do you want to buy$'
 msg_paracetamol db 10,13, 'How many paracetamol do you want to buy$'
+msg_cleritek db 10,13, 'How many cleritek do you want to buy$'
+msg_aspirin db 10,13, 'How many aspirin do you want to buy$'
 total_msg dw 'Total Earned= $'
 price_panadol dw 4
 price_paracetamol dw 3
+price_cleritek dw 2    
+price_aspirin dw 2
 input_again db 10,13, 'Please Press one of the above given keys$'
 wrong_input db 10,13, 'Wrong Input$'
 exit_program db 10,13,'Press 4 to exit$'
@@ -41,7 +45,8 @@ amount db 0
  
 panadol_sold db 0
 paracetamol_sold db 0
-   
+cleritek_sold db 0
+aspirin_sold db 0   
    
 .code 
 main proc
@@ -193,6 +198,74 @@ mov ah,9
         mov ah,2
         int 21h
         
+        jmp start
+        
+      cleritek:
+        
+        mov dx,offset msg_cleritek
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add cleritek_sold,al
+        mul price_cleritek
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+        
+        jmp start
+        
+     aspirin:
+         
+        mov dx,offset msg_aspirin
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add aspirin_sold,al
+        mul price_aspirin
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+        
+         
+                
         jmp start
     
     menu proc
