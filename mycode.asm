@@ -33,6 +33,8 @@ msg_cleritek db 10,13, 'How many cleritek do you want to buy$'
 msg_aspirin db 10,13, 'How many aspirin do you want to buy$'
 msg_brufen db 10,13, 'How many brufen do you want to buy$'
 msg_surbex db 10,13, 'How many subex do you want to buy$'
+msg_arinac db 10,13, 'How many arinac do you want to buy$'
+msg_sinopharm db 10,13, 'How many Sinopharm Vaccine do you want to buy$'
    
 total_msg dw 'Total Earned= $'
 price_panadol dw 4
@@ -41,6 +43,8 @@ price_cleritek dw 2
 price_aspirin dw 2
 price_brufen dw 1
 price_surbex dw 5  
+price_arinac dw 4
+price_sinopharm dw 2
    
    
 input_again db 10,13, 'Please Press one of the above given keys$'
@@ -56,6 +60,10 @@ cleritek_sold db 0
 aspirin_sold db 0 
 brufen_sold db 0
 surbex_sold db 0
+arinac_sold db 0
+sinopharm_sold db 0
+
+
    
 .code 
 main proc
@@ -346,6 +354,73 @@ mov ah,9
          
                 
         jmp start
+        
+        arinac:
+         
+        mov dx,offset msg_arinac
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add arinac_sold,al
+        mul price_arinac
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+                
+        jmp start
+        
+        sinopharm:
+         
+        mov dx,offset msg_sinopharm
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add sinopharm_sold,al
+        mul price_sinopharm
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+                
+        jmp start
+    
     
     menu proc
         mov dx,offset welcome
