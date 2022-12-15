@@ -27,11 +27,20 @@ opt7 db 10,13, '7. Arinac - 40b$'
 opt8 db 10,13, '8. Sinopharm Vaccine - 10b$'
 opt9 db 10,13, '9. Pfizer Vaccine - 20b$'
 newLine db 10,13, '$'
+msg_panadol db 10,13, 'How many panadols do you want to buy$'
+msg_paracetamol db 10,13, 'How many paracetamol do you want to buy$'
+total_msg dw 'Total Earned= $'
+price_panadol dw 4
+price_paracetamol dw 3
 input_again db 10,13, 'Please Press one of the above given keys$'
 wrong_input db 10,13, 'Wrong Input$'
 exit_program db 10,13,'Press 4 to exit$'
 amount_print db 10,13,'Press 3 to show amount earned today$'
- msg2 db 10,13,10,13, 'What Do You Want To Buy$'
+msg2 db 10,13,10,13, 'What Do You Want To Buy$'
+amount db 0
+ 
+panadol_sold db 0
+paracetamol_sold db 0
    
    
 .code 
@@ -121,7 +130,70 @@ mov ah,9
     mov ah,9
     int 21h    
     jmp start
+       panadol:
+         
+        mov dx,offset msg_panadol
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add panadol_sold,al
+        mul price_panadol
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+        jmp start
     
+    paracetamol:
+    
+        mov dx,offset msg_paracetamol
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add paracetamol_sold,al
+        mul price_paracetamol
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+        
+        jmp start
     
     menu proc
         mov dx,offset welcome
