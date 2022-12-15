@@ -26,6 +26,8 @@ Microsoft Teams Meetings:
 
 8/12/2022 --> Working on the design and the interface of the program
 
+15/12/2022 --> Working on the main catigories and prices of the medicines.
+
 ******************************************************************************************************************************************************************
 
 
