@@ -35,7 +35,8 @@ msg_brufen db 10,13, 'How many brufen do you want to buy$'
 msg_surbex db 10,13, 'How many subex do you want to buy$'
 msg_arinac db 10,13, 'How many arinac do you want to buy$'
 msg_sinopharm db 10,13, 'How many Sinopharm Vaccine do you want to buy$'
-   
+msg_pfizer db 10,13, 'How many Pfizer Vaccine do you want to buy$'
+
 total_msg dw 'Total Earned= $'
 price_panadol dw 4
 price_paracetamol dw 3
@@ -45,7 +46,7 @@ price_brufen dw 1
 price_surbex dw 5  
 price_arinac dw 4
 price_sinopharm dw 2
-   
+price_pfizer dw 8   
    
 input_again db 10,13, 'Please Press one of the above given keys$'
 wrong_input db 10,13, 'Wrong Input$'
@@ -62,7 +63,7 @@ brufen_sold db 0
 surbex_sold db 0
 arinac_sold db 0
 sinopharm_sold db 0
-
+pfizer_sold db 0
 
    
 .code 
@@ -420,7 +421,40 @@ mov ah,9
         int 21h
                 
         jmp start
-    
+    pfizer:
+         
+        mov dx,offset msg_pfizer
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add pfizer_sold,al
+        mul price_pfizer
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+                
+        jmp start  
+        
+    main endp
     
     menu proc
         mov dx,offset welcome
@@ -500,6 +534,24 @@ mov ah,9
         mov ah,1
         int 21h
         
+        cmp al,'1'
+        je panadol  
+        cmp al,'2'
+        je paracetamol
+        cmp al,'3'
+        je cleritek
+        cmp al,'4'
+        je aspirin
+        cmp al,'5'
+        je brufen  
+        cmp al,'6'
+        je surbex
+        cmp al,'7'
+        je arinac
+        cmp al,'8'
+        je sinopharm
+        cmp al,'9'
+        je pfizer
         
         
         ret
