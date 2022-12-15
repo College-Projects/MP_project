@@ -31,11 +31,18 @@ msg_panadol db 10,13, 'How many panadols do you want to buy$'
 msg_paracetamol db 10,13, 'How many paracetamol do you want to buy$'
 msg_cleritek db 10,13, 'How many cleritek do you want to buy$'
 msg_aspirin db 10,13, 'How many aspirin do you want to buy$'
+msg_brufen db 10,13, 'How many brufen do you want to buy$'
+msg_surbex db 10,13, 'How many subex do you want to buy$'
+   
 total_msg dw 'Total Earned= $'
 price_panadol dw 4
 price_paracetamol dw 3
 price_cleritek dw 2    
 price_aspirin dw 2
+price_brufen dw 1
+price_surbex dw 5  
+   
+   
 input_again db 10,13, 'Please Press one of the above given keys$'
 wrong_input db 10,13, 'Wrong Input$'
 exit_program db 10,13,'Press 4 to exit$'
@@ -46,7 +53,9 @@ amount db 0
 panadol_sold db 0
 paracetamol_sold db 0
 cleritek_sold db 0
-aspirin_sold db 0   
+aspirin_sold db 0 
+brufen_sold db 0
+surbex_sold db 0
    
 .code 
 main proc
@@ -250,6 +259,76 @@ mov ah,9
         
         add aspirin_sold,al
         mul price_aspirin
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+        
+         
+                
+        jmp start
+        
+        brufen:
+         
+        mov dx,offset msg_brufen
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add brufen_sold,al
+        mul price_brufen
+        
+        add amount,al
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        mov dl,cl
+        add dl,48
+        mov ah,2
+        int 21h
+        
+         
+                
+        jmp start
+        
+        surbex:
+         
+        mov dx,offset msg_surbex
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add surbex_sold,al
+        mul price_surbex
         
         add amount,al
         mov cl,al
