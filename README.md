@@ -22,11 +22,13 @@ The project's description:
 
 Microsoft Teams Meetings:
 
-1/12/2022 --> Choosing the project's idea
+01/12/2022 --> Choosing the project's idea
 
-8/12/2022 --> Working on the design and the interface of the program
+08/12/2022 --> Working on the design and the interface of the program
 
-15/12/2022 --> Working on the main catigories and prices of the medicines.
+15/12/2022 --> Working on the functions of the different categories of medicines
+
+21/12/2022 --> Creating a function that calculates the total price, deleting an order, and save in a file
 
 ******************************************************************************************************************************************************************
 
