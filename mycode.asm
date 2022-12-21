@@ -14,7 +14,7 @@ banner7 db  '|__|  |__|__|__|__|__|\_|___|___|__|__|$'
 
 nlineCurV       db 13, 10, "$"   
 welcome db 10,13,10,13, 'WELCOME TO MEDICAL STORE$'
-msg1 db 10,13,10,13, 'Choose a Option$'
+msg1 db 10,13,10,13, 'Choose an Option$'
 msg_medicines db 10,13, 'Press 1 to buy medicines$'
 medicines_sold db 10,13, 'Press 2 to see medicines statistics$'
 opt1 db 10,13, '1. Panadol - 20EGP$'
