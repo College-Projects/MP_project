@@ -693,4 +693,93 @@ loop totalprint
          
         ret
          show_amount endp
+         
+          medicines_stats proc
+            mov dx,offset panadol_print
+        mov ah,9
+        int 21h
+        
+        mov al,panadol_sold  
+        mov ah ,0
+        mov dx,0
+         call print 
+        
+        mov dx,offset paracetamol_print
+        
+        mov ah,9
+        int 21h
+        
+        
+        mov al,paracetamol_sold 
+         mov ah ,0
+       mov dx,0
+         call print
+        
+        
+        mov dx,offset cleritek_print
+        mov ah,9
+        int 21h 
+        
+        
+        mov al,cleritek_sold  
+         mov ah ,0
+        mov dx,0
+         call print
+        
+        mov dx,offset aspirin_print
+        mov ah,9
+        int 21h
+        
+        
+        mov al,aspirin_sold  
+         mov ah ,0
+       mov dx,0
+         call print
+        
+        
+        mov dx,offset brufen_print
+        mov ah,9
+        int 21h
+        
+        
+        mov al,brufen_sold  
+         mov ah ,0
+        mov dx,0
+         call print
+        
+        mov dx,offset arinac_print
+        mov ah,9
+        int 21h
+        
+        
+        mov al,arinac_sold 
+        mov ah,0
+        mov dx,0
+         call print
+        
+        mov dx,offset pfizer_print
+        mov ah,9
+        int 21h
+        
+        
+        mov al,pfizer_sold 
+         mov ah ,0
+        mov dx,0
+         call print
+        
+        mov dx,offset sinopharm_print
+        mov ah,9
+        int 21h
+                                     
+        mov al,sinopharm_sold   
+         mov ah ,0
+       mov dx,0
+         call print
+        
+        jmp start 
+        ret 
+          
+    medicines_stats endp     
+      
+    
     
