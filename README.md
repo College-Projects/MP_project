@@ -30,6 +30,8 @@ Microsoft Teams Meetings:
 
 21/12/2022 --> Creating a function that calculates the total price, deleting an order, and save in a file
 
+22/12/2022 --> Trying to solve thee file problems, and creating the password function
+
 ******************************************************************************************************************************************************************
 
 
