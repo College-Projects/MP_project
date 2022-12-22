@@ -129,3 +129,124 @@ mov ah,9
 lea dx, newLine
 mov ah,9
     int 21h
+
+lea dx, banner4
+mov ah,9
+    int 21h
+lea dx, newLine
+mov ah,9
+    int 21h
+
+lea dx, banner5
+mov ah,9
+    int 21h
+lea dx, newLine
+mov ah,9
+    int 21h
+
+lea dx, banner6
+mov ah,9
+    int 21h
+lea dx, newLine
+mov ah,9
+    int 21h
+
+lea dx, banner7
+mov ah,9
+    int 21h
+lea dx, newLine
+mov ah,9
+    int 21h
+lea dx, newLine
+mov ah,9
+    int 21h
+
+mov dx,offset input_password
+    mov ah,9
+    int 21h
+    mov dx,offset newLine
+    mov ah,9
+    int 21h
+    mov bx,offset password
+    mov cx,5
+    
+    l1:
+    mov ah,1
+    int 21h
+    cmp al,[bx]
+    jne incorrect
+    inc bx
+    loop l1
+
+
+     start:
+     
+    mov dx,offset newLine
+    mov ah,9
+    int 21h
+    call menu
+
+    mov dx,offset newLine
+    mov ah,9
+    int 21h    
+    
+    mov ah,1
+    int 21h
+    
+    cmp al,'1'
+    je menu2  
+    cmp al,'2'
+    je medicines_stats
+    cmp al,'3'
+    je show_amount
+    cmp al,'4'
+    je delete
+    cmp al,'5'
+    je save
+    cmp al,'6'
+    je exit
+    
+    mov dx,offset wrong_input
+    mov ah,9
+    int 21h
+    mov dx,offset input_again
+    mov ah,9
+    int 21h    
+    jmp start   
+    
+    panadol:
+         
+        mov dx,offset msg_panadol
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add panadol_sold,al
+            mov ah ,0
+        mul price_panadol
+        mov product , ax
+        
+        add amount,ax
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h 
+        
+             
+        
+         mov ax, product
+         call print 
+         
+         jmp start       
+    
