@@ -248,5 +248,146 @@ mov dx,offset input_password
          mov ax, product
          call print 
          
-         jmp start       
+         jmp start   
+         
+    paracetamol:
     
+        mov dx,offset msg_paracetamol
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add paracetamol_sold,al 
+            mov ah ,0
+        mul price_paracetamol
+        mov product , ax
+        
+        add amount,ax
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+       
+         mov ax, product
+         call print 
+         
+         jmp start 
+        
+                              
+    
+    cleritek:
+        
+        mov dx,offset msg_cleritek
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add cleritek_sold,al    
+            mov ah ,0
+        mul price_cleritek
+        mov product , ax
+        
+        add amount,ax
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+       
+        mov ax, product
+         call print 
+         
+         jmp start  
+        
+     aspirin:
+         
+        mov dx,offset msg_aspirin
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add aspirin_sold,al 
+            mov ah ,0
+        mul price_aspirin
+        mov product , ax
+        
+        add amount,ax
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+      
+        
+          mov ax, product
+           call print 
+         
+         jmp start 
+           
+        brufen:
+         
+        mov dx,offset msg_brufen
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add brufen_sold,al  
+            mov ah ,0
+        mov ah ,0
+        mul price_brufen
+        mov product , ax
+        
+        add amount,ax
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+      
+         
+        mov ax, product        
+        call print 
+         
+         jmp start  
+        
