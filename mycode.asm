@@ -831,5 +831,118 @@ loop totalprint
      
      delete endp
      
-       
+     save proc              ; proc to write output to file
+
+        ; create file
+        mov ah, 3ch
+        mov cx, 0
+        mov dx, offset filename
+        int 21h
+        
+        ; preserve file handler returned
+        mov handler, ax
+        
+        ; write to file
+        
+        lea dx, panadolV            ; ds:dx -> data to write
+        mov bx, handler         ; file handle
+        mov cx, 11              ; number of bytes to write
+        mov ah, 40h             ; WRITE TO FILE OR DEVICE
+        int 21h    
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset panadol_sold
+        add panadol_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 15
+        mov dx, offset ParacetamolV
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset paracetamol_sold  
+            add paracetamol_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 12
+        mov dx, offset CleritekV
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset cleritek_sold    
+            add cleritek_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 11
+        mov dx, offset AspirinV
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset aspirin_sold     
+            add aspirin_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 10
+        mov dx, offset BrufenV
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset brufen_sold 
+            add brufen_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 10
+        mov dx, offset SurbexV
+        int 21h
+               
     
