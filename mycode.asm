@@ -391,3 +391,141 @@ mov dx,offset input_password
          
          jmp start  
         
+       
+        surbex:
+         
+        mov dx,offset msg_surbex
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add surbex_sold,al     
+            mov ah ,0
+        mul price_surbex
+        mov product , ax
+        
+        add amount,ax
+         mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+       
+         
+         mov ax, product       
+         call print 
+         
+         jmp start 
+        arinac:
+         
+        mov dx,offset msg_arinac
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add arinac_sold,al   
+            mov ah ,0
+        mul price_arinac
+        mov product , ax
+        
+        add amount,ax
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+            
+            mov ax, product
+            call print 
+         
+         jmp start 
+        sinopharm:
+         
+        mov dx,offset msg_sinopharm
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add sinopharm_sold,al 
+            mov ah ,0
+        mul price_sinopharm
+        mov product , ax
+        
+        add amount,ax
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+       
+        mov ax, product        
+         call print 
+         
+         jmp start  
+     
+        pfizer:
+         
+        mov dx,offset msg_pfizer
+        mov ah,9
+        int 21h
+            
+        mov dx,offset newLine
+        mov ah,9
+        int 21h        
+        
+        mov ah,1
+        int 21h
+        
+        sub al,48
+        
+        add pfizer_sold,al 
+            mov ah ,0
+        mul price_pfizer
+        mov product , ax
+        
+        add amount,ax
+        mov cl,al
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+        mov dx,offset total_msg
+        mov ah,9
+        int 21h
+        
+       mov ax, product           
+      call print 
+         
+         jmp start  
+        
+        main endp
+    
