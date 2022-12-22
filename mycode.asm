@@ -348,6 +348,8 @@ mov dx,offset input_password
         mov dx,offset total_msg
         mov ah,9
         int 21h
+        
+        
       
         
           mov ax, product
@@ -528,4 +530,167 @@ mov dx,offset input_password
          jmp start  
         
         main endp
+        
+         menu proc
+      
+        mov dx,offset welcome
+        mov ah,9
+        int 21h
+        
+        mov dx,offset msg1
+        mov ah,9
+        int 21h
+        
+        mov dx,offset msg_medicines
+        mov ah,9
+        int 21h
+        
+        mov dx,offset medicines_sold
+        mov ah,9
+        int 21h
+        
+        mov dx,offset amount_print
+        mov ah,9
+        int 21h  
+        
+        mov dx,offset delete_medicines
+        mov ah,9
+        int 21h 
+        
+        mov dx,offset save_medicines
+        mov ah,9
+        int 21h
+        
+        mov dx,offset exit_program
+        mov ah,9
+        int 21h                  
+        
+             
+        ret  
+               
+    menu endp
+    
+          
+
+     
+     
+     menu2 proc  
+        
+        mov dx,offset msg2
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt1
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt2
+        mov ah,9
+        int 21h
+            
+        mov dx,offset opt3
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt4
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt5
+        mov ah,9
+        int 21h
+            
+        mov dx,offset opt6
+        mov ah,9         
+        int 21h
+        
+        mov dx,offset opt7
+        mov ah,9
+        int 21h
+        
+        mov dx,offset opt8
+        mov ah,9
+        int 21h
+            
+        mov dx,offset opt9
+        mov ah,9
+        int 21h
+        
+        mov dx,offset newLine
+        mov ah,9
+        int 21h    
+        
+        mov ah,1
+        int 21h       
+        
+        
+         cmp al,'1'
+        je panadol  
+        cmp al,'2'
+        je paracetamol
+        cmp al,'3'
+        je cleritek
+        cmp al,'4'
+        je aspirin
+        cmp al,'5'
+        je brufen  
+        cmp al,'6'
+        je surbex
+        cmp al,'7'
+        je arinac
+        cmp al,'8'
+        je sinopharm
+        cmp al,'9'
+        je pfizer
+        
+        
+        
+        
+        ret
+            
+            
+    menu2 endp  
+     
+     
+print proc    
+     
+      
+
+mov dx,0
+mov bx,10
+mov cx,0
+totalpush:  
+        div bx
+        push dx
+        mov dx,0
+    
+        inc cx
+        cmp ax,0
+       jne totalpush
+   
+totalprint:
+        pop dx
+        add dx,48
+        mov ah,2
+        int 21h
+loop totalprint
+               
+     
+     ret  
+               
+     print endp       
+               
+   
+    
+     show_amount proc      
+      mov dx,offset amount_earned
+        mov ah,9
+        int 21h
+         
+         mov ax, amount
+        call print
+        jmp start
+         
+        ret
+         show_amount endp
     
