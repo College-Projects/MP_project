@@ -781,5 +781,55 @@ loop totalprint
           
     medicines_stats endp     
       
-    
+     incorrect proc
+        
+        
+        mov dx,offset incorrect_password
+        mov ah,9
+        int 21h 
+        mov dx,offset newLine
+        jmp exit
+        
+      incorrect endp
+     
+     
+      exit proc
+        mov ah,2 
+        mov dl, 07              
+        int 21h
+        int 21h 
+        int 21h
+         mov ah,4ch
+        int 21h  
+      exit endp
+     
+     
+     delete proc 
+        mov panadol_sold, 0
+        mov paracetamol_sold , 0
+        mov cleritek_sold , 0
+        mov aspirin_sold , 0
+        mov brufen_sold , 0
+        mov surbex_sold , 0
+        mov arinac_sold , 0
+        mov sinopharm_sold , 0
+        mov pfizer_sold , 0
+        mov amount , 0 
+        mov dx,offset delete_message
+        mov ah,9
+        int 21h
+        
+        mov dx,offset newLine
+        mov ah,9
+        int 21h
+          
+          
+        jmp medicines_stats 
+         
+        
+        ret
+     
+     delete endp
+     
+       
     
