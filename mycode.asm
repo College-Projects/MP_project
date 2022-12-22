@@ -944,5 +944,123 @@ loop totalprint
         mov cx, 10
         mov dx, offset SurbexV
         int 21h
-               
+        
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset surbex_sold 
+            add surbex_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 10
+        mov dx, offset ArinacV
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset arinac_sold 
+            add arinac_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 13
+        mov dx, offset SinopharmV
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset sinopharm_sold 
+        add sinopharm_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 10
+        mov dx, offset PfizerV
+        int 21h
+        
+        mov ah, 40h
+        mov bx, handler
+        mov cx, 1
+        mov dx, offset pfizer_sold
+        add pfizer_sold ,48
+        int 21h
+        
+        lea dx, endl
+        mov bx, handler
+        mov cx, 2
+        mov ah, 40h
+        int 21h
+        
+        ;lea dx, amot
+        ;mov bx, handler
+        ;mov cx, 10
+        ;mov ah, 40h
+        ;int 21h
+        
+        ;lea dx, amount
+        ;mov bx, handler
+        ;mov cx, 3
+        ;mov ah, 40h
+        ;int 21h
+        
+        ;lea dx, endl
+        ;mov bx, handler
+        ;mov cx, 2
+        ;mov ah, 40h
+        ;int 21h
+        
+        ; close file
+        mov ah, 3eh
+        mov bx, handler
+        int 21h
+        
+        lea dx, newLine
+        mov ah,9
+        int 21h
+        
+        lea dx, saveMsg
+        mov ah,9
+        int 21h
+        
+        lea dx, newLine
+        mov ah,9
+        int 21h
+        
+        lea dx, newLine
+        mov ah,9
+        int 21h
+        
+        
+        
+        call exit
+            
+        ret          
+        save endp
+        
+    end main
     
