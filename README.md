@@ -35,27 +35,22 @@ Project's title: <h2>Pharmacy System</h2>
 ******************************************************************************************************************************************************************
 
 <h3>Procedures of Code:</h3>
-         <h4>menu proc:</h4>
-                 prints the welcome statement
+
+   <h4>menu proc:</h4>
                  
-                 prints the first menu 
-                           choose a option
+   prints the welcome statement          
+   prints the first menu                 
+                            choose a option                           
+                            Press 1 to buy medicines                     
+                            Press 2 to see medicines statistics                     
+                            Press 3 to show amount earned today
+                            Press 4 to delete all medicines                   
+                            Press 5 to save all medicines in file                 
+                            Press 6 to exit
                            
-                           Press 1 to buy medicines
-                           
-                           Press 2 to see medicines statistics
-                           
-                           Press 3 to show amount earned today
-                           
-                           Press 4 to delete all medicines
-                           
-                           Press 5 to save all medicines in file
-                           
-                           Press 6 to exit
-                           
-         <h4>menu2 proc:</h4>
+<h4>menu2 proc:</h4>
          
-                 if you press 1 in menu this procedure prints the second menu
+   if you press 1 in menu this procedure prints the second menu
                             What Do You Want To Buy
                             1. Paracetamol - 30EGP$'
                             2. Cleritek - 20EGP$'
@@ -66,19 +61,19 @@ Project's title: <h2>Pharmacy System</h2>
                             8. Sinopharm Vaccine - 10EGP$'
                             9. Pfizer Vaccine - 20EGP$'
                             
-         <h4>print proc:</h4>
+   <h4>print proc:</h4>
          
-                   prints any number consists of one digit or more
+   prints any number consists of one digit or more
                    
                    
-         <h4>medicines_stats proc:</h4>
+   <h4>medicines_stats proc:</h4>
          
-                    display sold quantity of each medicine
+   display sold quantity of each medicine
                     
                     
-         <h4>show amount proc:</h4>
+   <h4>show amount proc:</h4>
          
-                    display the total amount earned of all medicines
+   display the total amount earned of all medicines
                     
                     
                     
