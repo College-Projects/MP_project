@@ -235,7 +235,6 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-        mov cl,al
         mov dx,offset newLine
         mov ah,9
         int 21h
@@ -271,7 +270,6 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-        mov cl,al
         mov dx,offset newLine
         mov ah,9
         int 21h
@@ -307,7 +305,6 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-        mov cl,al
         mov dx,offset newLine
         mov ah,9
         int 21h
@@ -341,7 +338,7 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-        mov cl,al
+
         mov dx,offset newLine
         mov ah,9
         int 21h
@@ -379,7 +376,6 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-        mov cl,al
         mov dx,offset newLine
         mov ah,9
         int 21h
@@ -415,7 +411,6 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-         mov cl,al
         mov dx,offset newLine
         mov ah,9
         int 21h
@@ -449,7 +444,7 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-        mov cl,al
+   
         mov dx,offset newLine
         mov ah,9
         int 21h
@@ -482,7 +477,7 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-        mov cl,al
+    
         mov dx,offset newLine
         mov ah,9
         int 21h
@@ -516,7 +511,7 @@ mov dx,offset input_password
         mov product , ax
         
         add amount,ax
-        mov cl,al
+     
         mov dx,offset newLine
         mov ah,9
         int 21h
