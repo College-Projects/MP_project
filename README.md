@@ -39,12 +39,19 @@ Project's title: <h2>Pharmacy System</h2>
                  prints the welcome statement
                  prints the first menu 
                            choose a option
+                           
                            Press 1 to buy medicines
+                           
                            Press 2 to see medicines statistics
+                           
                            Press 3 to show amount earned today
+                           
                            Press 4 to delete all medicines
+                           
                            Press 5 to save all medicines in file
+                           
                            Press 6 to exit
+                           
          <h4>menu2 proc:</h4>
                  if you press 1 in menu this procedure prints the second menu
                             What Do You Want To Buy
