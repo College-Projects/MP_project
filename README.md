@@ -1,8 +1,8 @@
 # MP_project
 
-Project's name: Pharmacy System
+Project's title: <h2>Pharmacy System</h2>
 ********************************************************************************************************************************************************************
-Team members:
+<h3>Team members:</h3>
 
   11-Alaa Ahmed Ibraheem      
   
@@ -15,12 +15,12 @@ Team members:
   54-Youmna Waleed Tawfeek
 
 ******************************************************************************************************************************************************************
-The project's description:
+<h3>The project's description:</h3>
              A simple pharmacy system that allows the user to display the drugs' names, prices, and amounts. The main purpose of the program is to allow the user to                  make a successful purchase easily. First, a list of options is displayed asking the user to choose a valid option to be done. The program allows the                      user to add a specific medicine, show the amount of requested drugs, and calculate the total price.   
     
 ******************************************************************************************************************************************************************
 
-<h1>Microsoft Teams Meetings:</h1>
+<h3>Microsoft Teams Meetings:</h3>
 
 01/12/2022 --> Choosing the project's idea
 
