@@ -4,7 +4,7 @@ Project's title: <h2>Pharmacy System</h2>
 ********************************************************************************************************************************************************************
 <h3>Team members:</h3>
 
-  11-<bold>A</bold>laa Ahmed Ibraheem      
+  11-Alaa Ahmed Ibraheem      
   
   22-Zainab Ahmed Younis     
   
