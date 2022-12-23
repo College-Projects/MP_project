@@ -37,6 +37,7 @@ Project's title: <h2>Pharmacy System</h2>
 <h3>Procedures of Code:</h3>
          <h4>menu proc:</h4>
                  prints the welcome statement
+                 
                  prints the first menu 
                            choose a option
                            
@@ -53,6 +54,7 @@ Project's title: <h2>Pharmacy System</h2>
                            Press 6 to exit
                            
          <h4>menu2 proc:</h4>
+         
                  if you press 1 in menu this procedure prints the second menu
                             What Do You Want To Buy
                             1. Paracetamol - 30EGP$'
@@ -63,8 +65,26 @@ Project's title: <h2>Pharmacy System</h2>
                             7. Arinac - 40EGP$' 
                             8. Sinopharm Vaccine - 10EGP$'
                             9. Pfizer Vaccine - 20EGP$'
+                            
          <h4>print proc:</h4>
+         
                    prints any number consists of one digit or more
+                   
+                   
+         <h4>medicines_stats proc:</h4>
+         
+                    display sold quantity of each medicine
+                    
+                    
+         <h4>show amount proc:</h4>
+         
+                    display the total amount earned of all medicines
+                    
+                    
+                    
+                 
+                   
+                   
         
          
          
