@@ -34,6 +34,8 @@ Project's title: <h2>Pharmacy System</h2>
 
 ******************************************************************************************************************************************************************
 
+first print the logo and ask to enter the passward (azsmy) if true will contine the program , if false will exit .
+
 <h3>Procedures of Code:</h3>
 
    <h4>menu proc:</h4>
@@ -71,11 +73,26 @@ Project's title: <h2>Pharmacy System</h2>
    display sold quantity of each medicine
                     
                     
-   <h4>show amount proc:</h4>
+  <h4>show amount proc:</h4>
          
    display the total amount earned of all medicines
                     
-                    
+   <h4>incorrect proc:</h4>
+         
+   jumped to this function if the pass is incorrect , print incorrect mesage and exit
+   
+  <h4>exit proc:</h4>
+         
+   to funsih the run and exit 
+
+  <h4>delete proc:</h4>
+         
+   use to delete the client order ,so reset all mediciens and amount incorrect 
+   
+   <h4>save proc:</h4>
+         
+  to print the receipt in anew file so we create anew file and write to it all medicines with the sold number and finally closed the file  
+                  
                     
                  
                    
